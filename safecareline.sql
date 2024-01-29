@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 19, 2024 at 03:46 PM
+-- Generation Time: Jan 29, 2024 at 03:09 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -37,7 +37,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`email`, `password`) VALUES
-('admin@safecareline.com', '123');
+('admin@safecareline.com', '123'),
+('admin@edoc.com', '123');
 
 -- --------------------------------------------------------
 
@@ -60,7 +61,9 @@ CREATE TABLE `dokter` (
 --
 
 INSERT INTO `dokter` (`dokid`, `dokemail`, `doknama`, `dokkatasandi`, `doknik`, `doktel`, `spesialis`) VALUES
-(1, 'doctor@edoc.com', 'Test Dokter', '123', '000000000', '0110000000', 1);
+(1, 'doctor@safecareline.com', 'Test Dokter', '123', '3275790865', '0898764698', 1),
+(2, 'nurul@dokter.safecareline.com', 'nurul', '123', '2022320040', '089636804115', 2),
+(3, 'dokter@safecareline.com', 'Riski', '123', '2022320044', '085780660178', 3);
 
 -- --------------------------------------------------------
 
@@ -89,7 +92,24 @@ INSERT INTO `jadwal` (`jadwalid`, `dokid`, `judul`, `jadwaltgl`, `jadwalwaktu`, 
 (5, '1', 'Test Session', '2024-05-20', '20:35:00', 1),
 (6, '1', 'Test Session', '2024-06-20', '20:35:00', 1),
 (7, '1', 'Test Session', '2024-07-20', '20:36:00', 1),
-(8, '1', 'Test Session', '2024-08-20', '13:33:00', 1);
+(8, '1', 'Test Session', '2024-08-20', '13:33:00', 1),
+(9, '2', 'Test Session', '2040-01-01', '19:00:00', 30),
+(10, '2', 'Lab Session', '2024-06-10', '20:36:00', 2),
+(11, '2', 'Test Session', '2024-03-20', '20:33:00', 2),
+(12, '2', 'Test Session', '2024-04-20', '12:32:00', 2),
+(13, '2', 'Test Session', '2024-05-20', '20:35:00', 2),
+(14, '2', 'Test Session', '2024-06-20', '20:35:00', 2),
+(15, '2', 'Test Session', '2024-07-20', '20:36:00', 2),
+(16, '2', 'Test Session', '2024-08-20', '13:33:00', 2),
+(20, '3', 'Test Session', '2050-01-01', '18:00:00', 50),
+(21, '3', 'Lab Session', '2024-06-10', '20:36:00', 1),
+(22, '3', 'Sesi Malam', '2024-03-20', '20:33:00', 1),
+(23, '3', 'Test Session', '2024-04-20', '12:32:00', 1),
+(24, '3', 'Test Session', '2024-05-20', '20:35:00', 1),
+(25, '3', 'Test Session', '2024-06-20', '20:35:00', 1),
+(26, '3', 'Test Session', '2024-07-20', '20:36:00', 1),
+(27, '3', 'Test Session', '2024-08-20', '13:33:00', 1),
+(28, '2', 'Konseling', '2024-01-31', '10:00:00', 5);
 
 -- --------------------------------------------------------
 
@@ -110,7 +130,7 @@ CREATE TABLE `janjitemu` (
 --
 
 INSERT INTO `janjitemu` (`janjiid`, `pid`, `janjinom`, `jadwalid`, `janjitgl`) VALUES
-(1, 1, 1, 1, '2022-06-03');
+(15, 3, 2, 1, '2024-01-28');
 
 -- --------------------------------------------------------
 
@@ -135,7 +155,8 @@ CREATE TABLE `pasien` (
 
 INSERT INTO `pasien` (`pid`, `pemail`, `pnama`, `pkatasandi`, `palamat`, `pnik`, `pdob`, `ptel`) VALUES
 (1, 'patient@edoc.com', 'Test Patient', '123', 'Jakarta', '0000000000', '2000-01-01', '08579976490'),
-(2, 'pasien@safecareline.com', 'Rozi', '123', 'Bekasi', '0110000000', '2022-06-03', '089636804115');
+(3, 'pasien@safecareline.com', 'nurul', '123', 'bekasi', '327505060730005', '2002-07-06', '0897356890'),
+(4, 'nurul@pasien.safecareline.com', ' ', '', '', '', '0000-00-00', '089636804115');
 
 -- --------------------------------------------------------
 
@@ -177,7 +198,7 @@ INSERT INTO `spesialis` (`id`, `snama`) VALUES
 (22, 'Infectious diseases'),
 (23, 'Internal medicine'),
 (24, 'Laboratory medicine'),
-(25, 'Maxillo-facial surgery'),
+(25, 'psychologist'),
 (26, 'Microbiology'),
 (27, 'Nephrology'),
 (28, 'Neuro-psychiatry'),
@@ -229,7 +250,11 @@ INSERT INTO `webpengguna` (`email`, `tipepengguna`) VALUES
 ('admin@edoc.com', 'a'),
 ('doctor@edoc.com', 'd'),
 ('patient@edoc.com', 'p'),
-('pasien@safecareline.com', 'p');
+('pasien@safecareline.com', 'p'),
+('admin@safecareline.com', 'a'),
+('nurul@pasien.safecareline.com', 'p'),
+('dokter@safecareline.com', 'd'),
+('doctor@safecareline.com', 'd');
 
 --
 -- Indexes for dumped tables
@@ -289,25 +314,25 @@ ALTER TABLE `webpengguna`
 -- AUTO_INCREMENT for table `dokter`
 --
 ALTER TABLE `dokter`
-  MODIFY `dokid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `dokid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `jadwalid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `jadwalid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `janjitemu`
 --
 ALTER TABLE `janjitemu`
-  MODIFY `janjiid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `janjiid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `pasien`
 --
 ALTER TABLE `pasien`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
