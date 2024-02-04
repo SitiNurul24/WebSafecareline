@@ -1,22 +1,38 @@
 
-body{
-    margin: 7%;
-    background-color: #F6F7FA;
+/* Tambahkan ini ke CSS Anda */
+html, body {
+    height: 100%;
+    background-image: url(../img/b2.jpg);
+    background-size: cover;
+    margin: 0;
+    display: flex;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    align-items: center; /* Align vertikal */
+    justify-content: center; /* Align horizontal */
 }
 
-
-
-.container{
-    width: 45%;
+.container {
+    width: 150%;
     background-color: white;
     border: 1px solid rgb(235, 235, 235);
-    border-radius: 8px;
+    border-radius: 10px;
     margin: 0;
     padding: 0;
     box-shadow: 0 3px 5px 0 rgba(240, 240, 240, 0.3);
     animation: transitionIn-Y-over 0.5s;
-
 }
+
+.background-blur {
+    position: fixed; /* atau absolute */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(3px); /* Sesuaikan nilai blur sesuai kebutuhan */
+    z-index: -1; /* Menempatkannya di belakang konten lain */
+}
+
 td{
     text-align: center;
 
@@ -47,7 +63,6 @@ td{
 .hover-link1{
     font-weight: bold;
 }
-
 
 .hover-link1:hover{
     opacity: 0.8;

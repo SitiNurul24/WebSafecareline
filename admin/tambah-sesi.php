@@ -15,14 +15,14 @@
     if($_POST){
         //import database
         include("../koneksi.php");
-        $title=$_POST["title"];
+        $judul=$_POST["judul"];
         $dokid=$_POST["dokid"];
         $nop=$_POST["nop"];
         $date=$_POST["date"];
         $time=$_POST["time"];
-        $sql="insert into jadwal (dokid,title,jadwaltgl,jadwalwaktu,nop) values ($dokid,'$title','$date','$time',$nop);";
+        $sql="insert into jadwal (dokid,judul,jadwaltgl,jadwalwaktu,nop) values ($dokid,'$judul','$date','$time',$nop);";
         $result= $database->query($sql);
-        header("location: jadwal.php?action=session-added&title=$title");
+        header("location: jadwal.php?action=session-added&judul=$judul");
         
     }
     ?>

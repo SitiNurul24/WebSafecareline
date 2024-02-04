@@ -62,7 +62,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                <a href="../keluar.php" ><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
+                                <a href="../keluar.php" ><input type="button" value="Keluar" class="logout-btn btn-primary-soft btn"></a>
                                 </td>
                             </tr>
                     </table>
@@ -71,23 +71,23 @@
                 </tr>
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-home " >
-                        <a href="index.php" class="non-style-link-menu "><div><p class="menu-text">Halaman Utama</p></a></div></a>
+                        <a href="index.php" class="non-style-link-menu "><div><p class="menu-text">Beranda</p></a></div></a>
                     </td>
                 </tr>
                 <tr class="menu-row">
                     <td class="menu-btn menu-icon-doctor menu-active menu-icon-doctor-active">
-                        <a href="dokter.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">Daftar Semua Dokter</p></a></div>
+                        <a href="dokter.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">Daftar Dokter</p></a></div>
                     </td>
                 </tr>
                 
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-session">
-                        <a href="jadwal.php" class="non-style-link-menu"><div><p class="menu-text">Sesi Terjadwal</p></div></a>
+                        <a href="jadwal.php" class="non-style-link-menu"><div><p class="menu-text">Jadwal Sesi</p></div></a>
                     </td>
                 </tr>
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-appoinment">
-                        <a href="janjitemu.php" class="non-style-link-menu"><div><p class="menu-text">Pemesanan saya</p></a></div>
+                        <a href="janjitemu.php" class="non-style-link-menu"><div><p class="menu-text">Pemesanan Saya</p></a></div>
                     </td>
                 </tr>
                 <tr class="menu-row" >
@@ -126,7 +126,7 @@
 ?>
                             
                        
-                            <input type="Submit" value="Search" class="login-btn btn-primary btn" style="padding-left: 25px;padding-right: 25px;padding-top: 10px;padding-bottom: 10px;">
+                            <input type="Submit" value="Cari" class="login-btn btn-primary btn" style="padding-left: 25px;padding-right: 25px;padding-top: 10px;padding-bottom: 10px;">
                         
                         </form>
                         
@@ -249,7 +249,7 @@
                                         
                                         <a href="?action=view&id='.$dokid.'" class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-view"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">View</font></button></a>
                                        &nbsp;&nbsp;&nbsp;
-                                       <a href="?action=session&id='.$dokid.'&name='.$doknama.'"  class="non-style-link"><button  class="btn-primary-soft btn button-icon menu-icon-session-active"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Sessions</font></button></a>
+                                       <a href="?action=session&id='.$dokid.'&name='.$doknama.'"  class="non-style-link"><button  class="btn-primary-soft btn button-icon menu-icon-session-active"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Sesi</font></button></a>
                                         </div>
                                         </td>
                                     </tr>';
@@ -290,7 +290,7 @@
                             
                         </div>
                         <div style="display: flex;justify-content: center;">
-                        <a href="Hapus_Dokter.php?id='.$id.'" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"<font class="tn-in-text">&nbsp;Yes&nbsp;</font></button></a>&nbsp;&nbsp;&nbsp;
+                        <a href="hapus-dokter.php?id='.$id.'" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"<font class="tn-in-text">&nbsp;Yes&nbsp;</font></button></a>&nbsp;&nbsp;&nbsp;
                         <a href="dokter.php" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"><font class="tn-in-text">&nbsp;&nbsp;No&nbsp;&nbsp;</font></button></a>
 
                         </div>
@@ -299,17 +299,17 @@
             </div>
             ';
         }elseif($action=='view'){
-            $sqlmain= "select * from doctor where docid='$id'";
+            $sqlmain= "select * from dokter where dokid='$id'";
             $result= $database->query($sqlmain);
             $row=$result->fetch_assoc();
             $doknama=$row["doknama"];
             $dokemail=$row["dokemail"];
-            $spe=$row["spesialisasi"];
+            $spe=$row["spesialis"];
             
-            $spcil_res= $database->query("select snama from spesialisasi where id='$spe'");
+            $spcil_res= $database->query("select snama from spesialis where id='$spe'");
             $spcil_array= $spcil_res->fetch_assoc();
             $spcil_name=$spcil_array["snama"];
-            $nic=$row['doknik'];
+            $nik=$row['doknik'];
             $tele=$row['doktel'];
             echo '
             <div id="popup1" class="overlay">
@@ -318,7 +318,7 @@
                         <h2></h2>
                         <a class="close" href="dokter.php">&times;</a>
                         <div class="content">
-                            eDoc Web App<br>
+                            Safe Careline<br>
                             
                         </div>
                         <div style="display: flex;justify-content: center;">
@@ -359,7 +359,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                '.$nic.'<br><br>
+                                '.$nik.'<br><br>
                                 </td>
                             </tr>
                             <tr>
@@ -406,10 +406,10 @@
             <div id="popup1" class="overlay">
                     <div class="popup">
                     <center>
-                        <h2>Redirect to Doctors sessions?</h2>
+                        <h2>Alihkan ke sesi Dokter?</h2>
                         <a class="close" href="dokter.php">&times;</a>
                         <div class="content">
-                           Kamu ingin melihat semua sesi dari yy <br>('.substr($doknama,0,40).').
+                           Kamu ingin melihat semua sesi dari <br>('.substr($doknama,0,40).').
                             
                         </div>
                         <form action="jadwal.php" method="post" style="display: flex">

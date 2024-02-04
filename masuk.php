@@ -7,17 +7,10 @@
     <link rel="stylesheet" href="css/animations.css">  
     <link rel="stylesheet" href="css/main.css">  
     <link rel="stylesheet" href="css/login.css">
-    <style>
-        body {
-            background-image: url('edoc-doctor-appointment-system-main/img/bg01.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-    </style>
     <title>Masuk</title>
 </head>
 <body>
+<div class="background-blur"></div>
 <?php
 
 session_start();

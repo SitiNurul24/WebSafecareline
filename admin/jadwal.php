@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/main.css">  
     <link rel="stylesheet" href="../css/admin.css">
         
-    <title>jadwal</title>
+    <title>Jadwal</title>
     <style>
         .popup{
             animation: transitionIn-Y-bottom 0.5s;
@@ -53,12 +53,12 @@
                                 </td>
                                 <td style="padding:0px;margin:0px;">
                                     <p class="profile-title">Administrasi</p>
-                                    <p class="profile-subtitle">admin@edoc.com</p>
+                                    <p class="profile-subtitle">admin@safecareline.com</p>
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                <a href="../keluar.php" ><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
+                                <a href="../keluar.php" ><input type="button" value="Keluar" class="logout-btn btn-primary-soft btn"></a>
                                 </td>
                             </tr>
                     </table>
@@ -67,7 +67,7 @@
                 </tr>
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-dashbord" >
-                        <a href="index.php" class="non-style-link-menu"><div><p class="menu-text">Dashboard</p></a></div></a>
+                        <a href="index.php" class="non-style-link-menu"><div><p class="menu-text">Beranda</p></a></div></a>
                     </td>
                 </tr>
                 <tr class="menu-row">
@@ -77,7 +77,7 @@
                 </tr>
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-schedule menu-active menu-icon-schedule-active">
-                        <a href="jadwal.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">jadwal</p></div></a>
+                        <a href="jadwal.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">Jadwal</p></div></a>
                     </td>
                 </tr>
                 <tr class="menu-row">
@@ -97,7 +97,7 @@
             <table border="0" width="100%" style=" border-spacing: 0;margin:0;padding:0;margin-top:25px; ">
                 <tr >
                     <td width="13%" >
-                    <a href="jadwal.php" ><button  class="login-btn btn-primary-soft btn btn-icon-back"  style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px"><font class="tn-in-text">Back</font></button></a>
+                    <a href="dokter.php" ><button  class="login-btn btn-primary-soft btn btn-icon-back"  style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px"><font class="tn-in-text">Kembali</font></button></a>
                     </td>
                     <td>
                         <p style="font-size: 23px;padding-left:12px;font-weight: 600;">Pengelola Jadwal</p>
@@ -131,7 +131,7 @@
                     <td colspan="4" >
                         <div style="display: flex;margin-top: 40px;">
                         <div class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49);margin-top: 5px;">Jadwalkan Sesi</div>
-                        <a href="?action=add-session&id=none&error=0" class="non-style-link"><button  class="login-btn btn-primary btn button-icon"  style="margin-left:25px;background-image: url('../img/icons/add.svg');">Tambah Sesi</font></button>
+                        <a href="?action=tambah-sesi&id=none&error=0" class="non-style-link"><button  class="login-btn btn-primary btn button-icon"  style="margin-left:25px;background-image: url('../img/icons/add.svg');">Tambah Sesi</font></button>
                         </a>
                         </div>
                     </td>
@@ -378,7 +378,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                <form action="jadwal-sesi.php" method="POST" class="add-new-form">
+                                <form action="tambah-sesi.php" method="POST" class="add-new-form">
                                     <label for="judul" class="form-label">Judul Sesi : </label>
                                 </td>
                             </tr>
@@ -447,9 +447,9 @@
                            
                             <tr>
                                 <td colspan="2">
-                                    <input type="reset" value="Reset" class="login-btn btn-primary-soft btn" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="reset" value="Hapus" class="login-btn btn-primary-soft btn" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 
-                                    <input type="submit" value="Place this Session" class="login-btn btn-primary btn" name="shedulesubmit">
+                                    <input type="submit" value="Tempatkan Sesi ini" class="login-btn btn-primary btn" name="shedulesubmit">
                                 </td>
                 
                             </tr>
@@ -471,10 +471,10 @@
                     <div class="popup">
                     <center>
                     <br><br>
-                        <h2>Session Placed.</h2>
+                        <h2>Sesi Ditempatkan.</h2>
                         <a class="close" href="jadwal.php">&times;</a>
                         <div class="content">
-                        '.substr($juduleget,0,40).' was jadwald.<br><br>
+                        '.substr($juduleget,0,40).' dijadwalkan.<br><br>
                             
                         </div>
                         <div style="display: flex;justify-content: center;">

@@ -12,12 +12,13 @@
     
 </head>
 <body>
+<div class="background-blur"></div>
 <?php
 
 session_start();
 
 $_SESSION["user"]="";
-$_SESSION["usertype"]="";
+$_SESSION["tipepengguna"]="p";
 
 // Set the new timezone
 date_default_timezone_set('Asia/Kolkata');
@@ -29,7 +30,7 @@ if($_POST){
         'fname'=>$_POST['fname'],
         'lname'=>$_POST['lname'],
         'address'=>$_POST['address'],
-        'nic'=>$_POST['nic'],
+        'nik'=>$_POST['nik'],
         'dob'=>$_POST['dob']
     );
 
@@ -54,10 +55,10 @@ if($_POST){
             </tr>
             <tr>
                 <td class="label-td">
-                    <input type="text" name="dname" class="input-text" placeholder="Nama Depan" required>
+                    <input type="text" name="fname" class="input-text" placeholder="Nama Depan" required>
                 </td>
                 <td class="label-td">
-                    <input type="text" name="bname" class="input-text" placeholder="Nama Belakang" required>
+                    <input type="text" name="lname" class="input-text" placeholder="Nama Belakang" required>
                 </td>
             </tr>
             <tr>
@@ -67,7 +68,7 @@ if($_POST){
             </tr>
             <tr>
                 <td class="label-td" colspan="2">
-                    <input type="text" name="alamat" class="input-text" placeholder="Alamat" required>
+                    <input type="text" name="address" class="input-text" placeholder="Alamat" required>
                 </td>
             </tr>
             <tr>
@@ -82,12 +83,12 @@ if($_POST){
             </tr>
             <tr>
                 <td class="label-td" colspan="2">
-                    <label for="tl" class="form-label">Tanggal Lahir: </label>
+                    <label for="dob" class="form-label">Tanggal Lahir: </label>
                 </td>
             </tr>
             <tr>
                 <td class="label-td" colspan="2">
-                    <input type="date" name="tl" class="input-text" required>
+                    <input type="date" name="dob" class="input-text" required>
                 </td>
             </tr>
             <tr>

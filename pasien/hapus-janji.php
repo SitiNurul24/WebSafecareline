@@ -21,7 +21,7 @@
         $sql= $database->query("delete from janjitemu where janjiid='$id';");
         //$sql= $database->query("delete from dokter where dokemail='$email';");
         //print_r($email);
-        header("location: janjitemu.php");
+        header("location: hapus-janji.php");
     }
 
 

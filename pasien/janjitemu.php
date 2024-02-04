@@ -45,9 +45,6 @@
     $username=$userfetch["pnama"];
 
 
-    //echo $userid;
-    //echo $username;
-
 
     $sqlmain= "select janjitemu.janjiid,jadwal.jadwalid,jadwal.judul,dokter.doknama,pasien.pnama,jadwal.jadwaltgl,jadwal.jadwalwaktu,janjitemu.janjinom,janjitemu.janjitgl from jadwal inner join janjitemu on jadwal.jadwalid=janjitemu.jadwalid inner join pasien on pasien.pid=janjitemu.pid inner join dokter on jadwal.dokid=dokter.dokid  where  pasien.pid=$userid ";
 
@@ -88,7 +85,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <a href="../logout.php" ><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
+                                    <a href="../keluar.php" ><input type="button" value="Keluar" class="logout-btn btn-primary-soft btn"></a>
                                 </td>
                             </tr>
                     </table>
@@ -101,7 +98,7 @@
                 </tr>
                 <tr class="menu-row">
                     <td class="menu-btn menu-icon-doctor">
-                        <a href="dokter.php" class="non-style-link-menu"><div><p class="menu-text">Daftar Semua Dokter</p></a></div>
+                        <a href="dokter.php" class="non-style-link-menu"><div><p class="menu-text">Daftar Dokter</p></a></div>
                     </td>
                 </tr>
                 
@@ -127,7 +124,7 @@
             <table border="0" width="100%" style=" border-spacing: 0;margin:0;padding:0;margin-top:25px; ">
                 <tr >
                     <td width="13%" >
-                    <a href="index.php" ><button  class="login-btn btn-primary-soft btn btn-icon-back"  style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px"><font class="tn-in-text">Back</font></button></a>
+                    <a href="index.php" ><button  class="login-btn btn-primary-soft btn btn-icon-back"  style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px"><font class="tn-in-text">Kembali</font></button></a>
                     </td>
                     <td>
                         <p style="font-size: 23px;padding-left:12px;font-weight: 600;">Histori Pemesanan Saya</p>
@@ -156,15 +153,6 @@
 
                 </tr>
                
-                <!-- <tr>
-                    <td colspan="4" >
-                        <div style="display: flex;margin-top: 40px;">
-                        <div class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49);margin-top: 5px;">jadwal a Session</div>
-                        <a href="?action=add-session&id=none&error=0" class="non-style-link"><button  class="login-btn btn-primary btn button-icon"  style="margin-left:25px;background-image: url('../img/icons/add.svg');">Add a Session</font></button>
-                        </a>
-                        </div>
-                    </td>
-                </tr> -->
                 <tr>
                     <td colspan="4" style="padding-top:10px;width: 100%;" >
                     
@@ -281,7 +269,7 @@
                                                                     Tanggal Jadwal: '.$jadwaltgl.'<br>Starts: <b>@'.substr($jadwalwaktu,0,5).'</b> (24h)
                                                                 </div>
                                                                 <br>
-                                                                <a href="?action=drop&id='.$janjiid.'&title='.$judul.'&doc='.$doknama.'" ><button  class="login-btn btn-primary-soft btn "  style="padding-top:11px;padding-bottom:11px;width:100%"><font class="tn-in-text">Batalkan</font></button></a>
+                                                                <a href="?action=drop&id='.$janjiid.'&judul='.$judul.'&dok='.$doknama.'" ><button  class="login-btn btn-primary-soft btn "  style="padding-top:11px;padding-bottom:11px;width:100%"><font class="tn-in-text">Batalkan</font></button></a>
                                                         </div>
                                                                 
                                                     </div>
@@ -289,47 +277,6 @@
     
                                         }
                                         echo "</tr>";
-                           
-                                // for ( $x=0; $x<$result->num_rows;$x++){
-                                //     $row=$result->fetch_assoc();
-                                //     $janjiid=$row["janjiid"];
-                                //     $jadwalid=$row["jadwalid"];
-                                //     $judul=$row["title"];
-                                //     $doknama=$row["doknama"];
-                                //     $jadwaltgl=$row["jadwaltgl"];
-                                //     $jadwalwaktu=$row["jadwalwaktu"];
-                                //     $pnama=$row["pnama"];
-                                //     
-                                //     
-                                //     echo '<tr >
-                                //         <td style="font-weight:600;"> &nbsp;'.
-                                        
-                                //         substr($pnama,0,25)
-                                //         .'</td >
-                                //         <td style="text-align:center;font-size:23px;font-weight:500; color: var(--btnnicetext);">
-                                //         '.$janjinom.'
-                                        
-                                //         </td>
-                                //         <td>
-                                //         '.substr($judul,0,15).'
-                                //         </td>
-                                //         <td style="text-align:center;;">
-                                //             '.substr($jadwaltgl,0,10).' @'.substr($jadwalwaktu,0,5).'
-                                //         </td>
-                                        
-                                //         <td style="text-align:center;">
-                                //             '.$janjitgl.'
-                                //         </td>
-
-                                //         <td>
-                                //         <div style="display:flex;justify-content: center;">
-                                        
-                                //         <!--<a href="?action=view&id='.$janjiid.'" class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-view"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">View</font></button></a>
-                                //        &nbsp;&nbsp;&nbsp;-->
-                                //        <a href="?action=drop&id='.$janjiid.'&name='.$pnama.'&session='.$judul.'&janjinom='.$janjinom.'" class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-delete"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Cancel</font></button></a>
-                                //        &nbsp;&nbsp;&nbsp;</div>
-                                //         </td>
-                                //     </tr>';
                                     
                                 }
                             }
@@ -364,7 +311,7 @@
                         <h2>Booking Successfully.</h2>
                         <a class="close" href="janjitemu.php">&times;</a>
                         <div class="content">
-                        Nomer janji mu adalah'.$id.'.<br><br>
+                        Nomor janji mu adalah '.$id.'.<br><br>
                             
                         </div>
                         <div style="display: flex;justify-content: center;">
@@ -378,7 +325,7 @@
             ';
         }elseif($action=='drop'){
             $judul=$_GET["judul"];
-            $doknama=$_GET["doknama"];
+            $doknama=$_GET["dok"];
             
             echo '
             <div id="popup1" class="overlay">
@@ -389,7 +336,8 @@
                         <div class="content">
                            Apakah Kamu Ingin Membatalkan Janji Ini?<br><br>
                             Nama Sesi: &nbsp;<b>'.substr($judul,0,40).'</b><br>
-                            dokter name&nbsp; : <b>'.substr($doknama,0,40).'</b><br><br>
+                            Nama Dokter: &nbsp;<b>'.substr($doknama,0,40).'</b><br>
+
                             
                         </div>
                         <div style="display: flex;justify-content: center;">
@@ -406,14 +354,14 @@
             $result= $database->query($sqlmain);
             $row=$result->fetch_assoc();
             $nama=$row["doknama"];
-            $email=$row["doknama"];
+            $email=$row["dokemail"];
             $spe=$row["spesialis"];
             
             $spcil_res= $database->query("select snama from spesialis where id='$spe'");
             $spcil_array= $spcil_res->fetch_assoc();
             $spcil_name=$spcil_array["snama"];
-            $nic=$row['doknik'];
-            $tele=$row['doctel'];
+            $nik=$row['doknik'];
+            $tele=$row['doktel'];
             echo '
             <div id="popup1" class="overlay">
                     <div class="popup">
@@ -421,7 +369,7 @@
                         <h2></h2>
                         <a class="close" href="dokter.php">&times;</a>
                         <div class="content">
-                            eDoc Web App<br>
+                            Safe Careline<br>
                             
                         </div>
                         <div style="display: flex;justify-content: center;">
@@ -429,14 +377,14 @@
                         
                             <tr>
                                 <td>
-                                    <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">View Details.</p><br><br>
+                                    <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">Lihat Detail.</p><br><br>
                                 </td>
                             </tr>
                             
                             <tr>
                                 
                                 <td class="label-td" colspan="2">
-                                    <label for="name" class="form-label">Name: </label>
+                                    <label for="name" class="form-label">Nama: </label>
                                 </td>
                             </tr>
                             <tr>
@@ -462,7 +410,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                '.$nic.'<br><br>
+                                '.$nik.'<br><br>
                                 </td>
                             </tr>
                             <tr>

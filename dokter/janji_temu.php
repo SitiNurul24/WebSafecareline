@@ -71,23 +71,23 @@
                 </tr>
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-dashbord " >
-                        <a href="index.php" class="non-style-link-menu "><div><p class="menu-text">Dashboard</p></a></div></a>
+                        <a href="index.php" class="non-style-link-menu "><div><p class="menu-text">Beranda</p></a></div></a>
                     </td>
                 </tr>
                 <tr class="menu-row">
                     <td class="menu-btn menu-icon-appoinment  menu-active menu-icon-janjitemu-active">
-                        <a href="janji_temu.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">Janji Temu Saya</p></a></div>
+                        <a href="janji_temu.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">Janji Temu</p></a></div>
                     </td>
                 </tr>
                 
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-session">
-                        <a href="jadwal.php" class="non-style-link-menu"><div><p class="menu-text">Sesi Saya</p></div></a>
+                        <a href="jadwal.php" class="non-style-link-menu"><div><p class="menu-text">Sesi</p></div></a>
                     </td>
                 </tr>
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-patient">
-                        <a href="pasien.php" class="non-style-link-menu"><div><p class="menu-text">Pasien Saya</p></a></div>
+                        <a href="pasien.php" class="non-style-link-menu"><div><p class="menu-text">Pasien</p></a></div>
                     </td>
                 </tr>
                 <tr class="menu-row" >
@@ -485,7 +485,7 @@
                             
                         </div>
                         <div style="display: flex;justify-content: center;">
-                        <a href="delete-janji_temu.php?id='.$id.'" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"<font class="tn-in-text">&nbsp;Yes&nbsp;</font></button></a>&nbsp;&nbsp;&nbsp;
+                        <a href="hapus-janji.php?id='.$id.'" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"<font class="tn-in-text">&nbsp;Yes&nbsp;</font></button></a>&nbsp;&nbsp;&nbsp;
                         <a href="janji_temu.php" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"><font class="tn-in-text">&nbsp;&nbsp;No&nbsp;&nbsp;</font></button></a>
 
                         </div>

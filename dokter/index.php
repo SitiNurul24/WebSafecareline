@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/main.css">  
     <link rel="stylesheet" href="../css/admin.css">
         
-    <title>Dashboard</title>
+    <title>Beranda</title>
     <style>
         .dashbord-tables,.doctor-heade{
             animation: transitionIn-Y-over 0.5s;
@@ -82,18 +82,18 @@
                 </tr>
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-dashbord menu-active menu-icon-dashbord-active" >
-                        <a href="index.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">Dashboard</p></a></div></a>
+                        <a href="index.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">Beranda</p></a></div></a>
                     </td>
                 </tr>
                 <tr class="menu-row">
                     <td class="menu-btn menu-icon-appoinment">
-                        <a href="janji_temu.php" class="non-style-link-menu"><div><p class="menu-text">Janji Temu Saya</p></a></div>
+                        <a href="janji_temu.php" class="non-style-link-menu"><div><p class="menu-text">Janji Temu</p></a></div>
                     </td>
                 </tr>
                 
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-session">
-                        <a href="jadwal.php" class="non-style-link-menu"><div><p class="menu-text">Sesi Saya</p></div></a>
+                        <a href="jadwal.php" class="non-style-link-menu"><div><p class="menu-text">Sesi</p></div></a>
                     </td>
                 </tr>
                 <tr class="menu-row" >

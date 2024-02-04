@@ -20,54 +20,58 @@
 
 session_start();
 
-$_SESSION["user"]="";
-$_SESSION["usertype"]="";
+$_SESSION["user"] = "";
+$_SESSION["usertype"] = "";
 
-// Set the new timezone
+// Set the timezone
 date_default_timezone_set('Asia/Kolkata');
 $date = date('Y-m-d');
-
-$_SESSION["date"]=$date;
+$_SESSION["date"] = $date;
 
 //import database
 include("koneksi.php");
-if($_POST){
 
-    $result= $database->query("select * from webpengguna");
+if ($_POST) {
+    $fname = $_SESSION['personal']['fname'];
+    $lname = $_SESSION['personal']['lname'];
+    $pname = $fname . " " . $lname;
+    $address = $_SESSION['personal']['address'];
+    $nik = $_SESSION['personal']['nik'];
+    $dob = $_SESSION['personal']['dob'];
+    $email = $_POST['newemail'];
+    $tele = $_POST['tele'];
+    $newpassword = $_POST['katasandibaru'];
+    $cpassword = $_POST['katasandi'];
 
-    $fname=$_SESSION['personal']['fname'];
-    $lname=$_SESSION['personal']['lname'];
-    $name=$fname." ".$lname;
-    $address=$_SESSION['personal']['address'];
-    $nic=$_SESSION['personal']['nic'];
-    $dob=$_SESSION['personal']['dob'];
-    $email=$_POST['newemail'];
-    $tele=$_POST['tele'];
-    $newpassword=$_POST['newpassword'];
-    $cpassword=$_POST['cpassword'];
-    
-    if ($newpassword==$cpassword){
-        $sqlmain= "select * from webpengguna where email=?;";
+    if ($newpassword === $cpassword) {
+        $sqlmain = "SELECT * FROM webpengguna WHERE email = ?";
         $stmt = $database->prepare($sqlmain);
-        $stmt->bind_param("s",$email);
+        $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
-        if($result->num_rows==1){
-            $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Sudah memiliki akun untuk alamat email ini</label>';
-        }else{
-            //TODO
-            $database->query("insert into pasien(pemail,pnama,pkatasandi, palamat, pnik,pdob,ptel) values('$email','$name','$newpassword','$address','$nic','$dob','$tele');");
-            $database->query("insert into webpengguna values('$email','p')");
 
-            //print_r("insert into patient values($pid,'$email','$fname','$lname','$newpassword','$address','$nic','$dob','$tele');");
-            $_SESSION["user"]=$email;
-            $_SESSION["usertype"]="p";
-            $_SESSION["username"]=$fname;
+        if ($result->num_rows == 1) {
+            $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Sudah memiliki akun untuk alamat email ini</label>';
+        } else {
+            // Use prepared statements for both queries
+            $stmt = $database->prepare("INSERT INTO pasien (pemail, pnama, pkatasandi, palamat, pnik, pdob, ptel) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("sssssss", $email, $pname, $newpassword, $address, $nik, $dob, $tele);
+            $stmt->execute();
+            $stmt->close();
+
+            $stmt = $database->prepare("INSERT INTO webpengguna VALUES (?, 'p')");
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+            $stmt->close();
+
+            $_SESSION["user"] = $email;
+            $_SESSION["tipepengguna"] = "p"; // Corrected typo
+            $_SESSION["username"] = $fname;
 
             header('Location: pasien/index.php');
-            $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;"></label>';
+            exit(); // Prevent further code execution
         }
-    }else{
+    } else { 
         $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Kesalahan konfirmasi kata sandi! konfirmasi ulang kata sandi</label>';
     }    
 }else{
@@ -117,12 +121,12 @@ if($_POST){
             </tr>
             <tr>
                 <td class="label-td" colspan="2">
-                    <label for="kkatasandi" class="form-label">Konfirmasi Kata sandi: </label>
+                    <label for="katasandi" class="form-label">Konfirmasi Kata sandi: </label>
                 </td>
             </tr>
             <tr>
                 <td class="label-td" colspan="2">
-                    <input type="password" name="kkatasandi" class="input-text" placeholder="Konfirmasi Kata Sandi" required>
+                    <input type="password" name="katasandi" class="input-text" placeholder="Konfirmasi Kata Sandi" required>
                 </td>
             </tr>
             <tr>

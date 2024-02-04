@@ -62,7 +62,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <a href="../keluar.php" ><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
+                                    <a href="../keluar.php" ><input type="button" value="Keluar" class="logout-btn btn-primary-soft btn"></a>
                                 </td>
                             </tr>
                     </table>
@@ -80,7 +80,7 @@
                 </tr>
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-schedule">
-                        <a href="jadwal.php" class="non-style-link-menu"><div><p class="menu-text">jadwal</p></div></a>
+                        <a href="jadwal.php" class="non-style-link-menu"><div><p class="menu-text">Jadwal</p></div></a>
                     </td>
                 </tr>
                 <tr class="menu-row">

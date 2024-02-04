@@ -77,7 +77,7 @@ $hari_ini = date('Y-m-d');
             </tr>
             <tr class="menu-row">
                 <td class="menu-btn menu-icon-doctor">
-                    <a href="dokter.php" class="non-style-link-menu"><div><p class="menu-text">Semua Dokter</p></a></div>
+                    <a href="dokter.php" class="non-style-link-menu"><div><p class="menu-text">Daftar Dokter</p></a></div>
                 </td>
             </tr>
             
@@ -123,7 +123,7 @@ $hari_ini = date('Y-m-d');
         <table border="0" width="100%" style=" border-spacing: 0;margin:0;padding:0;margin-top:25px; ">
             <tr >
                 <td width="13%" >
-                <a href="index.php" ><button  class="login-btn btn-primary-soft btn btn-icon-back"  style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px"><font class="tn-in-text">Kembali</font></button></a>
+                <a href="dokter.php" ><button  class="login-btn btn-primary-soft btn btn-icon-back"  style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px"><font class="tn-in-text">Kembali</font></button></a>
                 </td>
                 <td >
                         <form action="" method="post" class="header-search">
@@ -188,7 +188,7 @@ $hari_ini = date('Y-m-d');
                                 
                                 <br>
                                 <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">Kami tidak dapat menemukan apa pun yang terkait dengan kata kunci Anda.</p>
-                                <a class="non-style-link" href="schedule.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Tampilkan semua sesi &nbsp;</font></button>
+                                <a class="non-style-link" href="jadwal.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Tampilkan semua sesi &nbsp;</font></button>
                                 </a>
                                 </center>
                                 <br><br><br><br>

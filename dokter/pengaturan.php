@@ -73,7 +73,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <a href="../keluar.php" ><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
+                                    <a href="../keluar.php" ><input type="button" value="Keluar" class="logout-btn btn-primary-soft btn"></a>
                                 </td>
                             </tr>
                     </table>
@@ -86,18 +86,18 @@
                 </tr>
                 <tr class="menu-row">
                     <td class="menu-btn menu-icon-appoinment">
-                        <a href="janji-temu.php" class="non-style-link-menu"><div><p class="menu-text">Janji Temu Saya</p></a></div>
+                        <a href="janji_temu.php" class="non-style-link-menu"><div><p class="menu-text">Janji Temu</p></a></div>
                     </td>
                 </tr>
                 
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-session">
-                        <a href="jadwal.php" class="non-style-link-menu"><div><p class="menu-text">Sesi Saya</p></div></a>
+                        <a href="jadwal.php" class="non-style-link-menu"><div><p class="menu-text">Sesi</p></div></a>
                     </td>
                 </tr>
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-patient">
-                        <a href="pasien.php" class="non-style-link-menu"><div><p class="menu-text">Pasien Saya</p></a></div>
+                        <a href="pasien.php" class="non-style-link-menu"><div><p class="menu-text">Pasien</p></a></div>
                     </td>
                 </tr>
                 <tr class="menu-row" >

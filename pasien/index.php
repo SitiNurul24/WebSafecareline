@@ -71,7 +71,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <a href="../keluar.php" ><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
+                                    <a href="../keluar.php" ><input type="button" value="Keluar" class="logout-btn btn-primary-soft btn"></a>
                                 </td>
                             </tr>
                     </table>
@@ -79,12 +79,13 @@
                 </tr>
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-home menu-active menu-icon-home-active" >
-                        <a href="index.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">Dashboard</p></a></div></a>
+                       <a href="index.php" class="non-style-link-menu non-style-link-menu-active"><p class="menu-text">Beranda</p></a>
+
                     </td>
                 </tr>
                 <tr class="menu-row">
                     <td class="menu-btn menu-icon-doctor">
-                        <a href="dokter.php" class="non-style-link-menu"><div><p class="menu-text">Daftar Semua Dokter</p></a></div>
+                        <a href="dokter.php" class="non-style-link-menu"><div><p class="menu-text">Daftar Dokter</p></a></div>
                     </td>
                 </tr>
                 
@@ -112,7 +113,7 @@
                         <tr >
                             
                             <td colspan="1" class="nav-bar" >
-                            <p style="font-size: 23px;padding-left:12px;font-weight: 600;margin-left:20px;">Dashboard</p>
+                            <p style="font-size: 23px;padding-left:12px;font-weight: 600;margin-left:20px;">Halaman Utama</p>
                           
                             </td>
                             <td width="25%">
@@ -156,7 +157,7 @@
                             <h1><?php echo $username  ?>.</h1>
                             <p>belum ada gambaran tentang dokter? tidak masalah, anda bisa lihat ke
                                 <a href="dokter.php" class="non-style-link"><b>"Daftar semua dokter"</b></a> Bagian atau
-                                <a href="jadwal.php" class="non-style-link"><b>"Sesi-Sesi"</b> </a><br>
+                                <a href="jadwal.php" class="non-style-link"><b>"Jadwal Sesi"</b> </a><br>
                                 Lihat janji temu kamu yang dulu dan yang akan datang.<br>Dan cari jam kedatangan dokter kamu atau konsultan medis.<br><br>
                             </p>
                             
@@ -183,7 +184,7 @@
     ?>
                                 
                            
-                                <input type="Submit" value="Search" class="login-btn btn-primary btn" style="padding-left: 25px;padding-right: 25px;padding-top: 10px;padding-bottom: 10px;">
+                                <input type="Submit" value="Cari" class="login-btn btn-primary btn" style="padding-left: 25px;padding-right: 25px;padding-top: 10px;padding-bottom: 10px;">
                             
                             <br>
                             <br>
